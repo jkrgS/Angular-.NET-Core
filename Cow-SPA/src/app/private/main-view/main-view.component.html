@@ -1,0 +1,27 @@
+<div class="add-button">
+  <button
+    class="btn btn-outline-success my-2 my-sm-0"
+    type="submit"
+    (click)="openDialogCreateUser()">
+    <i class="fa fa-plus-square-o"
+      aria-hidden="true">
+    </i> &nbsp; Add
+    User</button>
+</div>
+<div class="row">
+  <div class="col">
+    <app-users-list (mapGeo)="mapLngLat($event)">
+    </app-users-list>
+  </div>
+  <div class="col">
+    <app-map [hidden]="mapGeoDT.length <= 0"
+      [marker]="mapGeoDT"></app-map>
+    <div class="map-img"
+      [hidden]="mapGeoDT.length > 0">
+      <h3>
+        Please select an address!
+      </h3>
+      <img src="../assets/google_map.jpg" alt="">
+    </div>
+  </div>
+</div>

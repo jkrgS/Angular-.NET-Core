@@ -1,0 +1,7 @@
+<div *ngFor="let user of users; let i = index"
+  class="list">
+  <app-users-cards [user]="user"
+    (mapGeo)="mapTrigger($event)"
+    (reloadUserList)="refresh()">
+  </app-users-cards>
+</div>

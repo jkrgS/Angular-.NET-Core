@@ -1,0 +1,82 @@
+<h2 mat-dialog-title>Add Address for
+  <strong>{{data.userName}}</strong></h2>
+
+<mat-dialog-content [formGroup]="form">
+
+  <mat-form-field>
+    <input matInput placeholder="Street"
+      formControlName="street">
+    <mat-error
+      *ngIf="!form.valid && form.get('street').touched">
+      Street is required!</mat-error>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput placeholder="Street Number"
+      formControlName="streetNumber">
+    <mat-error
+      *ngIf="!form.valid && form.get('streetNumber').touched">
+      Street Number is required!</mat-error>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput placeholder="Post Code"
+      formControlName="postCode">
+    <mat-error
+      *ngIf="!form.valid && form.get('postCode').touched">
+      Post Code is required!</mat-error>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput placeholder="City"
+      formControlName="city">
+    <mat-error
+      *ngIf="!form.valid && form.get('city').touched">
+      City is required!</mat-error>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput placeholder="Country"
+      formControlName="country">
+    <mat-error
+      *ngIf="!form.valid && form.get('country').touched">
+      Country is required!</mat-error>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput placeholder="Longitude"
+      formControlName="longitude">
+    <mat-error
+      *ngIf="!form.valid && form.get('longitude').touched">
+      Longitude is required!</mat-error>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput placeholder="Latitude"
+      formControlName="latitude">
+    <mat-error
+      *ngIf="!form.valid && form.get('latitude').touched">
+      Country is required!</mat-error>
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-stroked-button
+    (click)="closeModal()">Close</button>
+  &nbsp;
+  <button mat-raised-button color="primary"
+    (click)="save()">Save</button>
+</mat-dialog-actions>

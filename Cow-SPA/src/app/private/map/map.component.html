@@ -1,0 +1,19 @@
+<agm-map [latitude]="defaultLat"
+  [longitude]="defaultLng" [zoom]="zoom"
+  [disableDefaultUI]="false"
+  [zoomControl]="false">
+
+  <agm-marker
+    *ngFor="let m of marker; let i = index"
+    [latitude]="+m.lat" [longitude]="+m.lng"
+    [label]="m.label"
+    [markerDraggable]="m.draggable" [opacity]=0.8
+    [animation]=1>
+
+    <agm-info-window>
+      <strong>{{m.city}}</strong>
+    </agm-info-window>
+
+  </agm-marker>
+
+</agm-map>

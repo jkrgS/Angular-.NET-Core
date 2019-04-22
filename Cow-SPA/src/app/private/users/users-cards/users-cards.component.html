@@ -1,0 +1,41 @@
+<div class="col-md-4 column">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-user"
+        aria-hidden="true"></i> &nbsp;
+      {{user.name}}
+      <button type="button" class="btn btn-danger"
+        style="float: right;"
+        (click)="deleteUser(user.id)">
+        <i class="fa fa-trash"
+          aria-hidden="true"></i>
+      </button>
+
+    </div>
+    <div
+      *ngFor="let address of user.addresses; let i = index"
+      class="card-body">
+      <i class="fa fa-address-book"
+        aria-hidden="true"></i> &nbsp;
+      {{address.street}} {{address.streetNumber}},
+      {{address.postCode}},
+      {{address.city}}/{{address.country}}
+    </div>
+    <div
+      class="card-footer bg-transparent border-success">
+      <button type="button" class="btn btn-info"
+        title="Add address"
+        (click)="createAddress(user.id, user.name)"><i
+          class="fa fa-plus-square">
+        </i>
+      </button>
+      <button type="button"
+        class="btn btn-warning"
+        style="float: right;"
+        (click)="mapGeoTrigger(user.addresses)">
+        <i [ngClass]="mapButton ? 'fa fa-check' : 'fa fa-map-marker'"
+          aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>
